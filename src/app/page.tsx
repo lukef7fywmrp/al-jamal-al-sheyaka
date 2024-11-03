@@ -13,7 +13,9 @@ import { Testimonials } from "@/components/testimonials";
 export default function HomePage() {
   return (
     <>
-      <Header />
+      <div className="bg-[#060606]">
+        <Header />
+      </div>
       <div className="relative">
         <BackgroundImage />
         <Hero />
