@@ -17,7 +17,7 @@ export function Testimonials() {
     {
       name: "loveatfirstbite 09",
       content:
-        "It was my first experience at Al Jamal Al Sheyaka beauty saloon and i'm extremely happy with their service. I have done my hair protein treatment from there. Staffs are very friendly and comfortable. Special thanks to my Hairdresser Shabana who is very smiling and works with perfection 👍",
+        "It was my first experience at Al Jamal Al Sheyaka beauty saloon and i&apos;m extremely happy with their service. I have done my hair protein treatment from there. Staffs are very friendly and comfortable. Special thanks to my Hairdresser Shabana who is very smiling and works with perfection 👍",
     },
     {
       name: "Sana Fatima",
@@ -74,8 +74,8 @@ export function Testimonials() {
             transition={{ delay: 0.4, duration: 0.8 }}
             className="mx-auto max-w-2xl text-sm sm:text-base text-muted-foreground"
           >
-            Your satisfaction is our top priority. We'll work closely with you to ensure that we
-            exceed your expectations.
+            Your satisfaction is our top priority. We&apos;ll work closely with you to ensure that
+            we exceed your expectations.
           </motion.p>
         </div>
 
