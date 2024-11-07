@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { IoChevronForwardSharp, IoChevronBackSharp } from "react-icons/io5";
 
 export function SpecialOffers() {
   const offers = [
@@ -65,8 +66,9 @@ export function SpecialOffers() {
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1, duration: 0.6 }}
                 >
-                  <Card className="overflow-hidden border-none bg-gray-50/95 backdrop-blur-sm">
-                    <div className="grid lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
+                  <Card className="overflow-hidden border-none backdrop-blur-sm relative">
+                    <div className="absolute inset-0 bg-gradient-to-b from-white via-primary/5 to-white" />
+                    <div className="grid lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 relative">
                       <div className="relative overflow-hidden">
                         <Image
                           alt={offer.title}
@@ -110,9 +112,8 @@ export function SpecialOffers() {
               </CarouselItem>
             ))}
           </CarouselContent>
-
-          <CarouselPrevious className="hidden md:flex -left-4 lg:-left-12 size-8 sm:size-10 rounded-full border-2 border-primary bg-white/90 text-primary backdrop-blur-sm hover:bg-white" />
-          <CarouselNext className="hidden md:flex -right-4 lg:-right-12 size-8 sm:size-10 rounded-full border-2 border-primary bg-white/90 text-primary backdrop-blur-sm hover:bg-white" />
+          <CarouselPrevious className="hidden md:flex -left-4 lg:-left-12 size-8 sm:size-10 rounded-full text-primary" />
+          <CarouselNext className="hidden md:flex -right-4 lg:-right-12 size-8 sm:size-10 rounded-full text-primary" />
         </Carousel>
       </motion.div>
     </section>

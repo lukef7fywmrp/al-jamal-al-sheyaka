@@ -55,7 +55,7 @@ export function ServicesGrid() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2, duration: 0.8 }}
-          className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-transparent text-center"
+          className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-transparent text-center"
         >
           Our Services
         </motion.h2>

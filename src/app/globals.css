@@ -33,6 +33,9 @@
     --ring: 0 0% 4%;
 
     --radius: 0.75rem;
+
+    --font-sans: "Inter", system-ui, sans-serif;
+    --font-heading: "Instrument Sans", system-ui, sans-serif;
   }
 }
 
@@ -46,4 +49,21 @@
   html {
     scroll-behavior: smooth;
   }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-carousel {
+  animation: scroll 10s linear infinite;
+}
+
+.animate-carousel:hover {
+  animation-play-state: paused;
 }

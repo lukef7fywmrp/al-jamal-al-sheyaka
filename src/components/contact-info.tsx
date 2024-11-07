@@ -3,7 +3,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { MapPin, Phone, Mail, Instagram, Facebook } from "lucide-react";
+import { FaFacebook } from "react-icons/fa";
+import { FaPhoneAlt } from "react-icons/fa";
+import { IoLogoWhatsapp } from "react-icons/io";
+import { IoMdMail } from "react-icons/io";
+import { AiFillInstagram } from "react-icons/ai";
+import { FaLocationDot } from "react-icons/fa6";
 
 export function ContactInfo() {
   const openingTimes = [
@@ -64,7 +69,7 @@ export function ContactInfo() {
                   href="#"
                   className="flex items-center gap-3 sm:gap-4 text-gray-300 transition-colors hover:text-white"
                 >
-                  <MapPin className="h-4 w-4 sm:h-5 sm:w-5 shrink-0" />
+                  <FaLocationDot className="h-4 w-4 sm:h-5 sm:w-5 shrink-0" />
                   <span className="text-xs sm:text-sm">
                     Buhira, Corniche St, Al Khan - Al Majaz 3 - Sharjah, UAE
                   </span>
@@ -74,7 +79,7 @@ export function ContactInfo() {
                   href="tel:+971553141778"
                   className="flex items-center gap-3 sm:gap-4 text-gray-300 transition-colors hover:text-white"
                 >
-                  <Phone className="h-4 w-4 sm:h-5 sm:w-5 shrink-0" />
+                  <FaPhoneAlt className="h-4 w-4 sm:h-5 sm:w-5 shrink-0" />
                   <span className="text-xs sm:text-sm">+971 55 314 1778</span>
                 </Link>
 
@@ -82,13 +87,7 @@ export function ContactInfo() {
                   href="https://wa.me/971553141778"
                   className="flex items-center gap-3 sm:gap-4 text-gray-300 transition-colors hover:text-white"
                 >
-                  <Image
-                    alt="WhatsApp"
-                    src="/images/843786whatsappicon-(1).png"
-                    width={16}
-                    height={16}
-                    className="shrink-0 sm:w-5 sm:h-5"
-                  />
+                  <IoLogoWhatsapp className="h-4 w-4 sm:h-5 sm:w-5 shrink-0" />
                   <span className="text-xs sm:text-sm">+971 55 314 1778</span>
                 </Link>
 
@@ -96,7 +95,7 @@ export function ContactInfo() {
                   href="mailto:Aljamalalsheyaka@gmail.com"
                   className="flex items-center gap-3 sm:gap-4 text-gray-300 transition-colors hover:text-white"
                 >
-                  <Mail className="h-4 w-4 sm:h-5 sm:w-5 shrink-0" />
+                  <IoMdMail className="h-4 w-4 sm:h-5 sm:w-5 shrink-0" />
                   <span className="text-xs sm:text-sm break-all sm:break-normal">
                     Aljamalalsheyaka@gmail.com
                   </span>
@@ -106,7 +105,7 @@ export function ContactInfo() {
                   href="#"
                   className="flex items-center gap-3 sm:gap-4 text-gray-300 transition-colors hover:text-white"
                 >
-                  <Instagram className="h-4 w-4 sm:h-5 sm:w-5 shrink-0" />
+                  <AiFillInstagram className="h-4 w-4 sm:h-5 sm:w-5 shrink-0" />
                   <span className="text-xs sm:text-sm">minalsohail_beautysalon</span>
                 </Link>
 
@@ -114,7 +113,7 @@ export function ContactInfo() {
                   href="#"
                   className="flex items-center gap-3 sm:gap-4 text-gray-300 transition-colors hover:text-white"
                 >
-                  <Facebook className="h-4 w-4 sm:h-5 sm:w-5 shrink-0" />
+                  <FaFacebook className="h-4 w-4 sm:h-5 sm:w-5 shrink-0" />
                   <span className="text-xs sm:text-sm">Al-Jamal Al Sheyaka Beauty Center</span>
                 </Link>
               </div>

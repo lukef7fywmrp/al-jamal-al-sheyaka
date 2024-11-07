@@ -25,14 +25,28 @@ export function MobileNavbar({ children, isOpen, setIsOpen }: MobileNavbarProps)
     };
   }, [isOpen, setIsOpen]);
 
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (isOpen && event.target instanceof Element) {
+        const mobileMenu = document.querySelector("[data-mobile-menu]");
+        if (mobileMenu && !mobileMenu.contains(event.target)) {
+          setIsOpen(false);
+        }
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [isOpen, setIsOpen]);
+
   return (
     <>
       <motion.button
         whileTap={{ scale: 0.95 }}
         onClick={() => setIsOpen(!isOpen)}
-        className="relative md:hidden rounded-full p-2 hover:bg-white/10 transition-colors"
+        className="relative md:hidden rounded-full p-2 hover:bg-black/5 transition-colors"
       >
-        <Menu className="size-6 text-white/90" />
+        <Menu className="size-6 text-primary/80 hover:text-primary transition-colors" />
       </motion.button>
 
       <AnimatePresence>
@@ -44,16 +58,16 @@ export function MobileNavbar({ children, isOpen, setIsOpen }: MobileNavbarProps)
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
               className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm md:hidden"
-              onClick={() => setIsOpen(false)}
             />
             <motion.div
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="fixed right-0 top-0 z-50 h-full w-[80%] max-w-[400px] md:hidden"
+              className="fixed right-0 top-0 z-50 h-[100dvh] w-[80%] max-w-[400px] md:hidden"
+              data-mobile-menu
             >
-              <div className="flex h-full flex-col overflow-y-auto bg-gradient-to-b from-black/95 to-primary/20 backdrop-blur-lg">
+              <div className="flex h-full flex-col overflow-y-auto bg-white">
                 <div className="flex-1 px-6 py-20">{children}</div>
                 <div className="h-24 bg-gradient-to-t from-primary/20 to-transparent" />
               </div>

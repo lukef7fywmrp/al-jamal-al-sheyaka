@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 
 export function Hero() {
   return (
-    <section className="absolute inset-0 z-20 flex min-h-[calc(100vh-5rem)] flex-col items-center justify-center px-4 py-20 sm:px-6">
+    <section className="absolute inset-0 z-20 flex min-h-screen flex-col items-center justify-center px-4 py-20 sm:px-6">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -51,7 +51,7 @@ export function Hero() {
               <Link
                 href="https://wa.me/971553141778?text=Hello, I would like to book an appointment."
                 target="_blank"
-                className="font-medium tracking-wider"
+                className="font-medium tracking-normal"
               >
                 BOOK NOW
               </Link>
@@ -64,7 +64,7 @@ export function Hero() {
               size="lg"
               className="w-full sm:w-auto rounded-full border-2 border-white bg-black/20 px-6 sm:px-8 text-sm sm:text-base text-white backdrop-blur-sm transition-all hover:bg-black/30 hover:border-white/90 hover:text-white/90 hover:shadow-lg"
             >
-              <Link href="/#services" className="font-medium tracking-wider">
+              <Link href="/#services" className="font-medium tracking-normal">
                 OUR SERVICES
               </Link>
             </Button>

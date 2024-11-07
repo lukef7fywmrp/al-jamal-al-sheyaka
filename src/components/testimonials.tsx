@@ -3,13 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-import {
-  Carousel,
-  CarouselPrevious,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-} from "@/components/ui/carousel";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
 
 export function Testimonials() {
@@ -17,7 +11,7 @@ export function Testimonials() {
     {
       name: "loveatfirstbite 09",
       content:
-        "It was my first experience at Al Jamal Al Sheyaka beauty saloon and i&apos;m extremely happy with their service. I have done my hair protein treatment from there. Staffs are very friendly and comfortable. Special thanks to my Hairdresser Shabana who is very smiling and works with perfection 👍",
+        "It was my first experience at Al Jamal Al Sheyaka beauty saloon and I'm extremely happy with their service. I have done my hair protein treatment from there. Staffs are very friendly and comfortable. Special thanks to my Hairdresser Shabana who is very smiling and works with perfection 👍",
     },
     {
       name: "Sana Fatima",
@@ -79,49 +73,104 @@ export function Testimonials() {
           </motion.p>
         </div>
 
-        <Carousel opts={{ loop: true, align: "start" }} className="w-full">
-          <CarouselContent className="-ml-2 sm:-ml-4">
-            {testimonials.map((testimonial, index) => (
-              <CarouselItem
-                key={index}
-                className="pl-2 sm:pl-4 basis-full sm:basis-1/2 lg:basis-1/3"
-              >
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1, duration: 0.6 }}
-                  className="h-full p-1"
-                >
-                  <Card className="h-full overflow-hidden border-none bg-white/95 shadow-lg backdrop-blur-sm transition-all duration-300 hover:shadow-xl">
-                    <CardContent className="flex h-full flex-col gap-4 sm:gap-6 p-4 sm:p-6 lg:p-8">
-                      <div className="flex items-center gap-2 sm:gap-3">
-                        <div className="flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-primary/10">
-                          <Image
-                            alt="Verified"
-                            src="/images/png-transparent-blue-check-logo-social-media-instagram-verified-badge-symbol-computer-icons-social-media-blue-leaf-influencer-marketing-thumbnail-removebg-preview.png"
-                            width={16}
-                            height={16}
-                            className="opacity-80 sm:size-5"
-                          />
-                        </div>
-                        <p className="text-sm sm:text-base font-medium text-primary">
-                          {testimonial.name}
-                        </p>
-                      </div>
-                      <p className="flex-1 text-xs sm:text-sm text-muted-foreground">
-                        {testimonial.content}
-                      </p>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
+        <div className="relative">
+          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-10" />
+          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-10" />
 
-          <CarouselPrevious className="hidden md:flex -left-4 lg:-left-12 size-8 sm:size-10 rounded-full border-2 border-primary bg-white/90 text-primary backdrop-blur-sm hover:bg-white" />
-          <CarouselNext className="hidden md:flex -right-4 lg:-right-12 size-8 sm:size-10 rounded-full border-2 border-primary bg-white/90 text-primary backdrop-blur-sm hover:bg-white" />
-        </Carousel>
+          <Carousel
+            opts={{
+              loop: true,
+              align: "start",
+              dragFree: true,
+              containScroll: false,
+              skipSnaps: false,
+            }}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-2 sm:-ml-4 animate-carousel">
+              {testimonials.map((testimonial, index) => (
+                <CarouselItem
+                  key={`first-${index}`}
+                  className="pl-2 sm:pl-4 basis-full sm:basis-1/2 lg:basis-1/3"
+                >
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1, duration: 0.6 }}
+                    className="h-full p-1"
+                  >
+                    <Card className="h-full overflow-hidden border border-black/10 bg-white/95 backdrop-blur-sm transition-all duration-300 hover:border-black/20">
+                      <CardContent className="flex h-full flex-col gap-4 sm:gap-6 p-4 sm:p-6 lg:p-8">
+                        <div className="flex items-center gap-2 sm:gap-3">
+                          <div className="flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-primary/10">
+                            <svg
+                              className="w-4 h-4 sm:w-5 sm:h-5 text-primary"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            >
+                              <path d="M20 6L9 17l-5-5" />
+                            </svg>
+                          </div>
+                          <p className="text-sm sm:text-base font-medium text-primary">
+                            {testimonial.name}
+                          </p>
+                        </div>
+                        <p className="flex-1 text-xs sm:text-sm text-muted-foreground">
+                          {testimonial.content}
+                        </p>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
+                </CarouselItem>
+              ))}
+              {testimonials.map((testimonial, index) => (
+                <CarouselItem
+                  key={`second-${index}`}
+                  className="pl-2 sm:pl-4 basis-full sm:basis-1/2 lg:basis-1/3"
+                >
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1, duration: 0.6 }}
+                    className="h-full p-1"
+                  >
+                    <Card className="h-full overflow-hidden border border-black/10 bg-white/95 backdrop-blur-sm transition-all duration-300 hover:border-black/20">
+                      <CardContent className="flex h-full flex-col gap-4 sm:gap-6 p-4 sm:p-6 lg:p-8">
+                        <div className="flex items-center gap-2 sm:gap-3">
+                          <div className="flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-primary/10">
+                            <svg
+                              className="w-4 h-4 sm:w-5 sm:h-5 text-primary"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            >
+                              <path d="M20 6L9 17l-5-5" />
+                            </svg>
+                          </div>
+                          <p className="text-sm sm:text-base font-medium text-primary">
+                            {testimonial.name}
+                          </p>
+                        </div>
+                        <p className="flex-1 text-xs sm:text-sm text-muted-foreground">
+                          {testimonial.content}
+                        </p>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
+        </div>
       </motion.div>
     </section>
   );
