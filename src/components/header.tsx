@@ -16,7 +16,7 @@ export function Header() {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="fixed top-0 left-0 right-0 z-30 bg-white/95 backdrop-blur-xl border-b border-black/5 transform-gpu will-change-transform"
+      className="fixed top-0 left-0 right-0 z-30 bg-white md:bg-white/95 backdrop-blur-xl border-b border-black/5 transform-gpu will-change-transform"
     >
       <div className="container relative flex h-20 items-center justify-between md:justify-center">
         <motion.div
