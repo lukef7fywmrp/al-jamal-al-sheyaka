@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { format } from "date-fns";
 
 import { Card, CardContent } from "@/components/ui/card";
 import Marquee from "react-fast-marquee";
@@ -12,55 +11,49 @@ export function Testimonials() {
       name: "loveatfirstbite 09",
       content:
         "It was my first experience at Al Jamal Al Sheyaka beauty saloon and I'm extremely happy with their service. I have done my hair protein treatment from there. Staffs are very friendly and comfortable. Special thanks to my Hairdresser Shabana who is very smiling and works with perfection 👍",
-      date: "2024-01-15",
-      profileUrl: "https://www.google.com/maps/contrib/112233445566778899",
+      profileUrl: "https://g.co/kgs/GFEgrHz",
       profileImage:
-        "https://images.pexels.com/photos/18892681/pexels-photo-18892681/free-photo-of-blonde-model-in-shadow.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "https://lh3.googleusercontent.com/a-/ALV-UjXfGakdR4K04DfMRCwemKeWK6l1q9Cw-7nzWGoT_Mtdiw5u355W=s40-c-rp-mo-br100",
     },
     {
       name: "Sana Fatima",
       content:
         "Thanks to Minal and team, the protein treatment looks amazing on my hair! I would highly recommend and the services provide by them are amazing! Loved my new haircut as well! 10/10",
-      date: "2024-01-10",
-      profileUrl: "https://www.google.com/maps/contrib/112233445566778899",
+      profileUrl: "https://g.co/kgs/Q8ZKmov",
       profileImage:
-        "https://images.pexels.com/photos/18892681/pexels-photo-18892681/free-photo-of-blonde-model-in-shadow.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "https://lh3.googleusercontent.com/a/ACg8ocKUyz3YVxYHK3HHRednp6N8hvlsJtrBSy0C6an2YBUnn5qyHdo=s40-c-rp-mo-br100",
     },
     {
       name: "Iman Khan",
       content:
         "I went to this salon to get my nails, makeup and hair protein done. I received exceptional service and am extremely happy with all the results. The staff went above and beyond and were very polite and understanding of what I wanted. I received many compliments and would highly recommend it!",
-      date: "2024-01-05",
-      profileUrl: "https://www.google.com/maps/contrib/112233445566778899",
+      profileUrl: "https://g.co/kgs/M6xBbTe",
       profileImage:
-        "https://images.pexels.com/photos/18892681/pexels-photo-18892681/free-photo-of-blonde-model-in-shadow.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "https://lh3.googleusercontent.com/a/ACg8ocILD496Lyx25DQLlA5wKj13kuv5bnf07xl87h-qUuX1C3KxFg=s40-c-rp-mo-br100",
     },
     {
       name: "Mahdiya Merchant",
       content:
         "I had asked for Caramel Highlights & they did an amazing job. Very satisfied, calm & clean staff. They did better than the photo I showed them! Will definitely come again! ;)",
-      date: "2023-12-28",
-      profileUrl: "https://www.google.com/maps/contrib/112233445566778899",
+      profileUrl: "https://g.co/kgs/4pkDXFW",
       profileImage:
-        "https://images.pexels.com/photos/18892681/pexels-photo-18892681/free-photo-of-blonde-model-in-shadow.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "https://lh3.googleusercontent.com/a-/ALV-UjVFvUg-4H73mfXYrG3g7MtPoUK1muh2_SujRAG5j4Kt1XwgX40=s40-c-rp-mo-br100",
     },
     {
       name: "Ahid Hussain",
       content:
         "They are providing the best services specially for henna and hair protein my wife is a regular customer of theres thankyou.",
-      date: "2023-12-20",
-      profileUrl: "https://www.google.com/maps/contrib/112233445566778899",
+      profileUrl: "https://g.co/kgs/ZxD59T5",
       profileImage:
-        "https://images.pexels.com/photos/18892681/pexels-photo-18892681/free-photo-of-blonde-model-in-shadow.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "https://lh3.googleusercontent.com/a-/ALV-UjW74XFjPxByGLNw0Ll8r-chnaB1GQNdaceKKTFdOhZfUBCXDC5J=s40-c-rp-mo-ba3-br100",
     },
     {
       name: "K .K",
       content:
         "I got my nails done here and it was such a great experience, the workers were really friendly and i enjoyed my time there so much i will definitely be visiting again",
-      date: "2023-12-15",
-      profileUrl: "https://www.google.com/maps/contrib/112233445566778899",
+      profileUrl: "https://g.co/kgs/1KGca6h",
       profileImage:
-        "https://images.pexels.com/photos/18892681/pexels-photo-18892681/free-photo-of-blonde-model-in-shadow.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "https://lh3.googleusercontent.com/a-/ALV-UjUR2eaPEnYWGN7ifEbFgu4YtvjqsL38u9YJh-Thq_hVwYRFXqpw=s40-c-rp-mo-br100",
     },
   ];
 
@@ -131,9 +124,6 @@ export function Testimonials() {
                             <div>
                               <p className="text-sm sm:text-base font-medium text-primary">
                                 {testimonial.name}
-                              </p>
-                              <p className="text-xs text-muted-foreground">
-                                {format(new Date(testimonial.date), "MMM d, yyyy")}
                               </p>
                             </div>
                           </div>

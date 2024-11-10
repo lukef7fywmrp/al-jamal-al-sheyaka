@@ -21,7 +21,8 @@ export function Hero() {
             transition={{ delay: 0.2, duration: 0.8 }}
             className="bg-gradient-to-r from-white to-white/90 bg-clip-text text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-transparent drop-shadow-lg"
           >
-            Luxurious Hair Treatments
+            Al Jamal Al Sheyaka
+            <br className="sm:hidden" />
             <br className="hidden sm:block" />
             Beauty Salon
           </motion.h1>

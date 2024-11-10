@@ -7,7 +7,7 @@ import { AiFillInstagram } from "react-icons/ai";
 import { FaFacebook } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { IoLogoWhatsapp, IoMdMail } from "react-icons/io";
-import logo from "../../public/images/logo.png";
+import logo from "../../public/images/logo-white-text.svg";
 
 export function ContactInfo() {
   const openingTimes = [
@@ -47,7 +47,7 @@ export function ContactInfo() {
               src={logo}
               width={160}
               height={160}
-              className="rounded-xl shadow-2xl object-contain brightness-0 invert"
+              className="rounded-xl shadow-2xl object-contain"
               priority
             />
           </motion.div>
