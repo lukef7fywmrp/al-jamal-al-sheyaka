@@ -26,10 +26,6 @@ export function ServicesGrid() {
       image: "/images/pexels-gustavo-fring-3985338.jpg",
     },
     {
-      title: "BODY SHAPING",
-      image: "/images/pexels-cottonbro-5742282.jpg",
-    },
-    {
       title: "HAIR REMOVALS",
       image: "/images/pexels-shvetsa-5069508.jpg",
     },
@@ -60,7 +56,7 @@ export function ServicesGrid() {
           Our Services
         </motion.h2>
 
-        <div className="grid gap-4 sm:gap-6 md:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-4 sm:gap-6 md:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (
             <motion.div
               key={service.title}

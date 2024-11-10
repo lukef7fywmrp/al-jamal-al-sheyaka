@@ -6,7 +6,7 @@ import { Sparkles } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="relative border-t border-gray-200 bg-white py-6 pb-12 sm:py-8 sm:pb-14">
+    <footer className="relative border-t border-gray-200 bg-white py-6 pb-20 sm:py-8 sm:pb-14">
       <div className="absolute inset-0 bg-gradient-to-b from-white via-primary/5 to-white opacity-50" />
 
       <motion.div
@@ -32,7 +32,7 @@ export function Footer() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.5, duration: 0.8 }}
-            className="absolute bottom-0 left-1/2 -translate-x-1/2 transform"
+            className="absolute -bottom-8 sm:bottom-0 left-1/2 -translate-x-1/2 transform"
           >
             <motion.div
               whileHover={{ scale: 1.05 }}
@@ -55,7 +55,7 @@ export function Footer() {
                 <Sparkles className="relative h-3.5 w-3.5 text-white" />
               </motion.div>
               <a
-                href="https://speedweb.com"
+                href="https://withspeedweb.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[10px] font-medium text-white sm:text-xs"

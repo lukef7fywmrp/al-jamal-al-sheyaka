@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { format } from "date-fns";
 
 import { Card, CardContent } from "@/components/ui/card";
 import Marquee from "react-fast-marquee";
@@ -11,31 +12,55 @@ export function Testimonials() {
       name: "loveatfirstbite 09",
       content:
         "It was my first experience at Al Jamal Al Sheyaka beauty saloon and I'm extremely happy with their service. I have done my hair protein treatment from there. Staffs are very friendly and comfortable. Special thanks to my Hairdresser Shabana who is very smiling and works with perfection 👍",
+      date: "2024-01-15",
+      profileUrl: "https://www.google.com/maps/contrib/112233445566778899",
+      profileImage:
+        "https://images.pexels.com/photos/18892681/pexels-photo-18892681/free-photo-of-blonde-model-in-shadow.jpeg?auto=compress&cs=tinysrgb&w=800",
     },
     {
       name: "Sana Fatima",
       content:
         "Thanks to Minal and team, the protein treatment looks amazing on my hair! I would highly recommend and the services provide by them are amazing! Loved my new haircut as well! 10/10",
+      date: "2024-01-10",
+      profileUrl: "https://www.google.com/maps/contrib/112233445566778899",
+      profileImage:
+        "https://images.pexels.com/photos/18892681/pexels-photo-18892681/free-photo-of-blonde-model-in-shadow.jpeg?auto=compress&cs=tinysrgb&w=800",
     },
     {
       name: "Iman Khan",
       content:
         "I went to this salon to get my nails, makeup and hair protein done. I received exceptional service and am extremely happy with all the results. The staff went above and beyond and were very polite and understanding of what I wanted. I received many compliments and would highly recommend it!",
+      date: "2024-01-05",
+      profileUrl: "https://www.google.com/maps/contrib/112233445566778899",
+      profileImage:
+        "https://images.pexels.com/photos/18892681/pexels-photo-18892681/free-photo-of-blonde-model-in-shadow.jpeg?auto=compress&cs=tinysrgb&w=800",
     },
     {
       name: "Mahdiya Merchant",
       content:
         "I had asked for Caramel Highlights & they did an amazing job. Very satisfied, calm & clean staff. They did better than the photo I showed them! Will definitely come again! ;)",
+      date: "2023-12-28",
+      profileUrl: "https://www.google.com/maps/contrib/112233445566778899",
+      profileImage:
+        "https://images.pexels.com/photos/18892681/pexels-photo-18892681/free-photo-of-blonde-model-in-shadow.jpeg?auto=compress&cs=tinysrgb&w=800",
     },
     {
       name: "Ahid Hussain",
       content:
         "They are providing the best services specially for henna and hair protein my wife is a regular customer of theres thankyou.",
+      date: "2023-12-20",
+      profileUrl: "https://www.google.com/maps/contrib/112233445566778899",
+      profileImage:
+        "https://images.pexels.com/photos/18892681/pexels-photo-18892681/free-photo-of-blonde-model-in-shadow.jpeg?auto=compress&cs=tinysrgb&w=800",
     },
     {
       name: "K .K",
       content:
         "I got my nails done here and it was such a great experience, the workers were really friendly and i enjoyed my time there so much i will definitely be visiting again",
+      date: "2023-12-15",
+      profileUrl: "https://www.google.com/maps/contrib/112233445566778899",
+      profileImage:
+        "https://images.pexels.com/photos/18892681/pexels-photo-18892681/free-photo-of-blonde-model-in-shadow.jpeg?auto=compress&cs=tinysrgb&w=800",
     },
   ];
 
@@ -89,23 +114,41 @@ export function Testimonials() {
                   >
                     <Card className="h-full overflow-hidden border border-black/10 bg-white/95 backdrop-blur-sm transition-all duration-300 hover:border-black/20">
                       <CardContent className="flex h-full flex-col gap-3 sm:gap-6 p-3 sm:p-6 lg:p-8">
-                        <div className="flex items-center gap-2 sm:gap-3">
-                          <div className="flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-primary/10">
-                            <svg
-                              className="w-4 h-4 sm:w-5 sm:h-5 text-primary"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              strokeWidth="2"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center gap-3">
+                            <a
+                              href={testimonial.profileUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="block h-10 w-10 sm:h-12 sm:w-12 overflow-hidden rounded-full ring-2 ring-primary/10 transition-all hover:ring-primary/30"
                             >
-                              <path d="M20 6L9 17l-5-5" />
-                            </svg>
+                              <img
+                                src={testimonial.profileImage}
+                                alt={testimonial.name}
+                                className="h-full w-full object-cover"
+                              />
+                            </a>
+                            <div>
+                              <p className="text-sm sm:text-base font-medium text-primary">
+                                {testimonial.name}
+                              </p>
+                              <p className="text-xs text-muted-foreground">
+                                {format(new Date(testimonial.date), "MMM d, yyyy")}
+                              </p>
+                            </div>
                           </div>
-                          <p className="text-xs sm:text-base font-medium text-primary">
-                            {testimonial.name}
-                          </p>
+                          <div className="flex items-center gap-1">
+                            {[...Array(5)].map((_, i) => (
+                              <svg
+                                key={i}
+                                className="w-4 h-4 text-yellow-400"
+                                fill="currentColor"
+                                viewBox="0 0 20 20"
+                              >
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                              </svg>
+                            ))}
+                          </div>
                         </div>
                         <p className="flex-1 text-xs sm:text-sm text-muted-foreground line-clamp-4 sm:line-clamp-none">
                           {testimonial.content}

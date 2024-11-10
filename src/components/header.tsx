@@ -7,6 +7,8 @@ import { motion } from "framer-motion";
 import { MobileNavbar } from "@/components/mobile-navbar";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import logo from "../../public/images/logo.png";
+import { FaLocationDot } from "react-icons/fa6";
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,14 +28,7 @@ export function Header() {
           className="relative md:absolute md:left-0"
         >
           <Link href="/" className="flex items-center gap-3 transition-all">
-            <Image
-              alt="Logo"
-              src="/images/IMG0215.jpg"
-              height={40}
-              width={120}
-              className="object-contain brightness-100 contrast-100"
-              priority
-            />
+            <Image alt="Logo" src={logo} className="object-contain w-24 h-24" priority />
           </Link>
         </motion.div>
 
@@ -65,7 +60,22 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-8 relative md:absolute md:right-0">
+        <div className="flex items-center gap-4 relative md:absolute md:right-0">
+          <motion.div
+            className="hidden md:flex items-center gap-2 pr-4 border-r border-gray-200"
+            whileHover={{ scale: 1.02 }}
+            transition={{ type: "spring", stiffness: 400, damping: 17 }}
+          >
+            <Link
+              href="https://maps.app.goo.gl/ocuHdVQUYGRpoVkg6"
+              target="_blank"
+              className="flex items-center gap-2 text-primary/80 hover:text-primary"
+            >
+              <FaLocationDot className="h-4 w-4 shrink-0" />
+              <span className="text-sm font-medium">Sharjah, UAE</span>
+            </Link>
+          </motion.div>
+
           <motion.div
             className="hidden md:block"
             whileHover={{ scale: 1.05 }}
