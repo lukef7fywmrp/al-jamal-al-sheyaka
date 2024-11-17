@@ -6,10 +6,6 @@ import { motion } from "framer-motion";
 export function ServicesGrid() {
   const services = [
     {
-      title: "BEAUTY PACKAGES",
-      image: "/images/pexels-laura-james-6102143.jpg",
-    },
-    {
       title: "MANICURE & PEDICURE",
       image: "/images/pexels-kpaukshtite-704815.jpg",
     },
